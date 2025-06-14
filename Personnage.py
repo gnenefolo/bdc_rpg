@@ -31,9 +31,13 @@ class Personnage:
     def attaquer(self, cible):
         if not self.en_vie:
             return f"{self.nom} est mort et ne peut pas attaquer."
-        
-        degats = self.force
-        cible.points_de_vie -= degats
+
+        if self.arme:
+            degats = self.force * 2 + self.arme.degats
+        else:
+            degats = self.force * 2
+
+        cible.subir_degats(degats)
         
         if cible.points_de_vie <= 0:
             cible.en_vie = False

@@ -1,8 +1,13 @@
 from Personnage import Personnage
+from Arme import Arme
 
 def main():
     # Création de deux personnages
-    personnage1 = Personnage(nom="Guerrier", classe="Guerrier", niveau=1, points_de_vie=100, force=20, intelligence=5)
+
+    epe_legendaire = Arme("Epée légendaire", 10)
+
+    personnage1 = Personnage(nom="Guerrier", classe="Guerrier", niveau=1, points_de_vie=100,
+                             force=20, intelligence=5, arme=epe_legendaire)
     personnage2 = Personnage(nom="Mage", classe="Mage", niveau=1, points_de_vie=80, force=5, intelligence=20)
 
     # Affichage des informations des personnages
